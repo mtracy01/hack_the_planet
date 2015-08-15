@@ -13,7 +13,7 @@
    - Enable urgent notifications on PEBBLE WATCH
    - Inform insurance policy holders of road violations through TWILIO and SENDGRID
    - Rate vehicle operators based on their road behavior to lower insurance costs
-   - Send distress signals
+   - Send distress signals  
 B) ROAD SCOUT
    - Display GOOGLE MAP on mobile lock screen with CYANOGEN
    - Overlay weather and road conditions on GOOGLE MAP
