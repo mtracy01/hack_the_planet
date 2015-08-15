@@ -1,2 +1,2 @@
-include ':app', ':satellitemenu'
+include ':satellitemenu', ':app'
 project(':satellitemenu').projectDir = new File('app/satellitemenu')
