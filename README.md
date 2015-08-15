@@ -15,7 +15,7 @@ Matt Tracy
    - Rate vehicle operators based on their road behavior to lower insurance costs
    - Send distress signals
 B) ROAD SCOUT
-   - Display GOOGLE MAP on mobile lock screen
+   - Display GOOGLE MAP on mobile lock screen with CYANOGEN
    - Overlay weather and road conditions on GOOGLE MAP
    - Signal upcoming road conditions with vibrating PEBBLE WATCH alerts
    - Display locations and statuses of other users
