@@ -72,7 +72,7 @@ public class ScoreScreen extends ListActivity {
 
     public int getViolations() { //return amount of times the speed limit was violated
         int n = 4;
-        if (n = 0) {
+        if (n == 0) {
             return 0;
             //if no violations, show some other congratulationary message
         }

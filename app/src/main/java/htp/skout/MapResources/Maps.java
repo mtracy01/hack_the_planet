@@ -99,7 +99,7 @@ public class Maps {
         if (calledInitialize) {
             map.setMyLocationEnabled(false);
 
-            //initialize players, setting their markers
+            // players, setting their markers
             initializePlayers(map, Global.user);
             //Move map's camera and set zoom level.  I will make the zoom a variable later
             //  map.moveCamera(CameraUpdateFactory.newLatLngZoom(Data.user.getCoordinates(), 18));
@@ -183,7 +183,7 @@ public class Maps {
       }
 
 
-    private static Bitmap addBorder(Bitmap original, int color) {
+    public static Bitmap addBorder(Bitmap original, int color) {
         // Create a copy of the image so we don't modify the original
         Bitmap picture = original.copy(Bitmap.Config.ARGB_8888, true);
         picture.setHasAlpha(true);

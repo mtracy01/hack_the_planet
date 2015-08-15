@@ -1,6 +1,9 @@
 package htp.skout.MapResources.MapRunner;
 
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,10 +17,15 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import htp.skout.HelperComponents.MathHelper;
 import htp.skout.MapResources.LatLngInterpolator;
 import htp.skout.MapResources.Maps;
 import htp.skout.MapResources.SyncedMapFragment;
@@ -29,6 +37,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
     private String LOG_TAG = "MapActivity";
     private SyncedMapFragment map;
+
+    private double MAX_DISTANCE = 50000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +128,43 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
                     }
                 });
+
+
+                //TODO: Add code for animating global list of users here, removing them if they are outside of the radius
+
+                ArrayList<User> inRangeUsers = new ArrayList<User>();
+                LatLng centerPoint = Global.user.getLocation();
+                int i=0;
+                for(User user: Global.users){
+                    if(!(MathHelper.distance(centerPoint, user.getLocation())> MAX_DISTANCE)){
+                        inRangeUsers.add(user);
+                        Marker m;
+                        if((m=user.getMarker())!=null){
+                            Global.mapFragment.animateMarkerToGB(m, user.getLocation(), interpolator, 1500);
+                            inRangeUsers.add(user);
+                        }
+                        else{
+                            //TODO: Set new marker, associate it with user, and display it on the map
+                            if(user.getUserAvatar()==null) {
+                                Log.e(LOG_TAG, "User didn't have a profile photo! Giving them default profile picture...");
+                                Bitmap big = BitmapFactory.decodeResource(Global.mapActivity.getResources(), R.drawable.ic_launcher);
+                                big = Bitmap.createScaledBitmap(big, big.getWidth() / 5, big.getHeight() / 5, false);
+                                user.setAvatar(big);
+                            }
+
+                            Bitmap tmp = user.getUserAvatar();
+                            Bitmap doubleSized = Bitmap.createScaledBitmap(tmp, tmp.getWidth() * 2, tmp.getHeight() * 2, false);
+                            user.setMarker(Global.map.addMarker(new MarkerOptions()
+                                    .position(user.getLocation())
+                                    .icon(BitmapDescriptorFactory.fromBitmap(Maps.addBorder(doubleSized, Color.DKGRAY)))));
+                        }
+                    }
+                    else{
+                        //TODO: Remove the user's marker from the map so that it does not remain
+                        user.getMarker().remove();
+                    }
+                    i++;
+                }
 
             }
         });
