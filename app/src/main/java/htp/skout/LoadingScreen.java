@@ -1,9 +1,13 @@
 package htp.skout;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.parse.Parse;
+import com.parse.ParseUser;
 
 public class LoadingScreen extends AppCompatActivity {
 
@@ -12,7 +16,25 @@ public class LoadingScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading_screen);
 
-        //TODO parse initialisation
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        Parse.initialize(this, "kjKkRqlBXS9vtkmiSPCqbLQSrDVvGBkyLKcazXTf", "j8WcWT3Wed570ddWBO3rfcbjT8wwGMP8fLeuzGOM");
+
+        //start next activity depending on whether the user is logged in or not...
+
+        if (ParseUser.getCurrentUser() == null) {
+            //no user logged in, going to login screen
+            Intent intent = new Intent(LoadingScreen.this, Login.class);
+            startActivity(intent);
+            finish();
+
+        } else {
+            //user is logged in, going to main menu
+            Intent intent = new Intent(LoadingScreen.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
     }
 
