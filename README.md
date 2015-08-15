@@ -1,31 +1,21 @@
 # hack_the_planet
 
-# PROJECT SKOUT!
+# PROJECT SKOUT!A mobile app to encourage safety, socializing, and sightseeing on the road================
 
-A mobile app to both encourage motorcyle riders to ride more, and to promote the growth and education of new riders through increased safety and social features.
-
-================
-Team Members
-
+### Harman Anand
 ### Jeroen Goossens
-(Penguinologist)
 ### Zach Perry
-(ZachPurdue)
-### Scotty Shaw
-(thefreshduke)
+### $cotty $haw
 ### Matt Tracy
-(mtracy01)
 
-================
-
-**A) ROAD SAFETY**
+================**A) ROAD SAFETY**  
    - Lock mobile devices traveling above a speed threshold
    - Enable urgent notifications on *PEBBLE WATCH*
-   - Inform insurance policy holders of road violations through *TWILIO* and/or *SENDGRID*
+   - Inform insurance policy holders of road violations through *TWILIO* and *SENDGRID*
    - Rate vehicle operators based on their road behavior to lower insurance costs
    - Send distress signals  
 
-**B) ROAD SCOUT**
+**B) ROAD SCOUT**  
    - Display *GOOGLE MAP* on mobile lock screen with *CYANOGEN*
    - Show weather icons and road conditions on *GOOGLE MAP*
    - Indicate nearby tourist hotspots on *GOOGLE MAP*
@@ -39,3 +29,5 @@ WEATHER APIS
 http://openweathermap.org/api
 
 http://apidev.accuweather.com/developers/
+
+http://products.wolframalpha.com/api/
