@@ -1,4 +1,4 @@
-package htp.skout;
+package htp.skout.GUI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,10 @@ import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import htp.skout.R;
+
 import htp.skout.Objects.Global;
+
 
 public class Signup extends AppCompatActivity {
 
