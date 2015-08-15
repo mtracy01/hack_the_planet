@@ -8,14 +8,14 @@
 ### $cotty $haw
 ### Matt Tracy
 
-================**A) ROAD SAFETY**
+================**A) ROAD SAFETY**  
    - Lock mobile devices traveling above a speed threshold
    - Enable urgent notifications on *PEBBLE WATCH*
    - Inform insurance policy holders of road violations through *TWILIO* and *SENDGRID*
    - Rate vehicle operators based on their road behavior to lower insurance costs
    - Send distress signals  
 
-**B) ROAD SCOUT**
+**B) ROAD SCOUT**  
    - Display *GOOGLE MAP* on mobile lock screen with *CYANOGEN*
    - Show weather icons and road conditions on *GOOGLE MAP*
    - Indicate nearby tourist hotspots on *GOOGLE MAP*
