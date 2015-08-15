@@ -14,7 +14,7 @@ import htp.skout.frameworks.GPSThread;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
