@@ -5,7 +5,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +24,8 @@ import com.google.android.gms.maps.model.Marker;
 import java.util.HashSet;
 import java.util.Iterator;
 
+import htp.skout.R;
+
 /**
  * Created by Matthew on 4/5/2015.
  * Purpose: Map fragment with interpolation effects
@@ -29,9 +33,25 @@ import java.util.Iterator;
 public class SyncedMapFragment extends SupportMapFragment {
     public View mOriginalContentView;
     private MapViewWrapper mWrapper;
+    private String LOG_TAG = "SyncedMapFragment";
 
     @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+
+        SupportMapFragment mMapFragment = (SupportMapFragment) getActivity()
+                .getSupportFragmentManager().findFragmentById(R.id.map);
+
+        if (mMapFragment == null) {
+            mMapFragment = SupportMapFragment.newInstance();
+            getFragmentManager().beginTransaction().replace(R.id.map, mMapFragment).commit();
+        }
+
+
+    }
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.i(LOG_TAG, "Called");
         mOriginalContentView = super.onCreateView(inflater, container, savedInstanceState);
         mWrapper = new MapViewWrapper(getActivity());
         mWrapper.addView(super.onCreateView(inflater, container, savedInstanceState));
@@ -163,5 +183,15 @@ public class SyncedMapFragment extends SupportMapFragment {
                 return super.equals(o);
             }
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        Fragment f = (Fragment) getFragmentManager().findFragmentById(R.id.map);
+        if (f != null) {
+            getFragmentManager().beginTransaction().remove(f).commit();
+        }
+
+        super.onDestroyView();
     }
 }

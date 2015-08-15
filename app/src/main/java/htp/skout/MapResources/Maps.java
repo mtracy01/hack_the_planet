@@ -119,6 +119,7 @@ public class Maps {
                     .position(sydney));
         }
         Global.map = map;
+        Global.map.moveCamera(CameraUpdateFactory.newLatLngZoom(Global.user.getLocation(),15));
         // Add a listener for map clicks, used to add beacons
         /*Data.map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             public void onMapClick(LatLng point) {
