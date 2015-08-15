@@ -16,6 +16,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import htp.skout.Objects.Global;
+import htp.skout.Objects.User;
+import htp.skout.R;
+
 /**
  * Created by Matthew on 2/21/2015.
  * Purpose: Helper class for implementation of the MapFragment
@@ -81,10 +85,10 @@ public class Maps {
      *
      * @param user host user
      */
-  /*  public static void setCenterPosition(User user) {
+    public static void setCenterPosition(User user) {
         calledInitialize = true;
-        center = user.getCoordinates();
-    }*/
+        center = user.getLocation();
+    }
 
     /**
      * Purpose: Prepare map with specified parameters
@@ -97,7 +101,7 @@ public class Maps {
             map.setMyLocationEnabled(false);
 
             //initialize players, setting their markers
-            //initializePlayers(map, Data.players);
+            initializePlayers(map, Global.user);
             //Move map's camera and set zoom level.  I will make the zoom a variable later
             //  map.moveCamera(CameraUpdateFactory.newLatLngZoom(Data.user.getCoordinates(), 18));
             Log.v("Maps", "Set Center");
@@ -114,9 +118,9 @@ public class Maps {
                     .snippet("The most populous city in Australia.")
                     .position(sydney));
         }
-       /* Data.map = map;
+        Global.map = map;
         // Add a listener for map clicks, used to add beacons
-        Data.map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+        /*Data.map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             public void onMapClick(LatLng point) {
                 if (Data.user.getInGame()) {
                     if (Data.user.getGame().isBeaconsEnabled()) {
@@ -159,61 +163,26 @@ public class Maps {
      * //  * @param map        the map that is being modified by this framework
      * //  * @param playerList the list of players in the game
      */
-    // public static void initializePlayers(GoogleMap map, ArrayList<User> playerList) {
+    public static void initializePlayers(GoogleMap map, User user) {
+        /* Convert coordinates to latitude and longitude tuple */
+        LatLng latLng = Global.user.getLocation();
 
-    //      hasBorders = false;
-        /* create copy of users to store in class */
+        if(Global.user.getUserAvatar()==null) {
+            Log.e(LOG_TAG, "User didn't have a profile photo! Giving them default profile picture...");
+            Bitmap big = BitmapFactory.decodeResource(Global.mapActivity.getResources(), R.drawable.ic_launcher);
+            big = Bitmap.createScaledBitmap(big, big.getWidth() / 5, big.getHeight() / 5, false);
+            Global.user.setAvatar(big);
+        }
 
-        /* Create markers and put them in respective locatons */
-    /*    for (User user : Data.players) {
+        Bitmap tmp = user.getUserAvatar();
+        Bitmap doubleSized = Bitmap.createScaledBitmap(tmp, tmp.getWidth() * 2, tmp.getHeight() * 2, false);
+        user.setMarker(map.addMarker(new MarkerOptions()
+        .position(latLng)
+        .icon(BitmapDescriptorFactory.fromBitmap(addBorder(doubleSized, Color.DKGRAY)))));
 
-            /* Convert coordinates to latitude and longitude tuple */
-           /* LatLng latLng = user.getCoordinates();
+      }
 
-            if (user.getProfilePhoto() == null) {
-                Log.e(LOG_TAG, "User didn't have a profile photo! Giving them default profile picture...");
-                Bitmap big = BitmapFactory.decodeResource(Data.mainAct.getResources(), R.drawable.com_facebook_profile_picture_blank_portrait);
-                big = Bitmap.createScaledBitmap(big, big.getWidth() / 5, big.getHeight() / 5, false);
-                user.setProfilePhoto(big);
-            }
-            Bitmap tmp = user.getProfilePhoto();
-            Bitmap doubleSized = Bitmap.createScaledBitmap(tmp, tmp.getWidth() * 2, tmp.getHeight() * 2, false);
 
-            switch (user.getTeam() - 1) {
-                case 0:
-                    user.setMarker(map.addMarker(new MarkerOptions()
-                            .position(latLng)
-                            .icon(BitmapDescriptorFactory
-                                    .fromBitmap(addBorder(doubleSized, Color.DKGRAY)))));//.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))));
-                    break;
-                case 1:
-                    user.setMarker(map.addMarker(new MarkerOptions()
-                            .position(latLng)
-                            .icon(BitmapDescriptorFactory
-                                    .fromBitmap(addBorder(doubleSized, Color.BLUE)))));
-                    break;
-                case 2:
-                    user.setMarker(map.addMarker(new MarkerOptions()
-                            .position(latLng)
-                            .icon(BitmapDescriptorFactory
-                                    .fromBitmap(addBorder(doubleSized, Color.RED)))));
-                    break;
-                case 3:
-                    user.setMarker(map.addMarker(new MarkerOptions()
-                            .position(latLng)
-                            .icon(BitmapDescriptorFactory
-                                    .fromBitmap(addBorder(doubleSized, Color.YELLOW)))));
-                    break;
-                default:
-                    user.setMarker(map.addMarker(new MarkerOptions()
-                            .position(latLng)
-                            .icon(BitmapDescriptorFactory
-                                    .fromBitmap(addBorder(doubleSized, Color.GREEN)))));
-                    break;
-            }
-        }*/
-
-    //  }
     private static Bitmap addBorder(Bitmap original, int color) {
         // Create a copy of the image so we don't modify the original
         Bitmap picture = original.copy(Bitmap.Config.ARGB_8888, true);

@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import com.parse.Parse;
 import com.parse.ParseUser;
 
+import htp.skout.Objects.Global;
+import htp.skout.Objects.User;
+
 public class LoadingScreen extends AppCompatActivity {
 
     @Override
@@ -31,6 +34,7 @@ public class LoadingScreen extends AppCompatActivity {
 
         } else {
             //user is logged in, going to main menu
+            Global.user  = new User(ParseUser.getCurrentUser().getUsername());
             Intent intent = new Intent(LoadingScreen.this, MainActivity.class);
             startActivity(intent);
             finish();

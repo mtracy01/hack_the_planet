@@ -1,10 +1,15 @@
 package htp.skout;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+
+import htp.skout.MapResources.MapRunner.MapActivity;
+import htp.skout.Objects.Global;
+import htp.skout.frameworks.GPSThread;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,7 +18,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (Button) findViewById(R.id.button);
+        Global.context = this;
+        if(Global.gpsThread==null)
+            Global.gpsThread = new GPSThread();
+
+        startActivity(new Intent(MainActivity.this, MapActivity.class));
+        //button = (Button) findViewById(R.id.button);
+
     }
 
     @Override

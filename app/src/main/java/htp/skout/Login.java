@@ -15,6 +15,9 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
+import htp.skout.Objects.Global;
+import htp.skout.Objects.User;
+
 public class Login extends AppCompatActivity {
 
     private EditText username;
@@ -46,6 +49,7 @@ public class Login extends AppCompatActivity {
                             // Hooray! The user is logged in.
 
                             //go to other activity
+                            Global.user = new User(username.getText().toString());
 
                             Intent intent = new Intent(Login.this, MainActivity.class);
                             startActivity(intent);
