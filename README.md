@@ -5,7 +5,7 @@
 ### Harman Anand
 ### Jeroen Goossens
 ### Zach Perry
-### $cotty $haw
+### $cotty ($ugaDaddy) $haw
 ### Matt Tracy
 
 ================**A) ROAD SAFETY**
@@ -29,3 +29,7 @@ WEATHER APIS
 http://openweathermap.org/api
 
 http://apidev.accuweather.com/developers/
+
+
+current status:
+unknown.... (team mates are passed out...)
