@@ -8,16 +8,11 @@ A mobile app to both encourage motorcyle riders to ride more, and to promote the
 
 Team Members
 
-### Harman Anand
-(sh953)
-### Jeroen Goossens
-(Penguinologist)
-### Zach Perry
-(ZachPurdue)
-### Scotty Shaw
-(thefreshestduke)
-### Matt Tracy
-(mtracy01)
+### Harman Anand (sh953)
+### Jeroen Goossens (Penguinologist)
+### Zach Perry (ZachPurdue)
+### Scotty Shaw (thefreshduke)
+### Matt Tracy (mtracy01)
 
 ================
 
