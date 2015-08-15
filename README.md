@@ -1,6 +1,6 @@
 # hack_the_planet
 
-PROJECT SKOUT!A mobile app to encourage safety, socializing, and sightseeing on the road================
+# PROJECT SKOUT!A mobile app to encourage safety, socializing, and sightseeing on the road================
 
 # Harman Anand
 # Jeroen Goossens
