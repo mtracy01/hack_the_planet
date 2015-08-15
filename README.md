@@ -6,6 +6,8 @@ A mobile app to both encourage motorcyle riders to ride more, and to promote the
 
 ================
 
+Team Members
+
 ### Harman Anand
 (sh953)
 ### Jeroen Goossens
