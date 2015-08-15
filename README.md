@@ -1,14 +1,22 @@
 # hack_the_planet
 
-# PROJECT SKOUT!A mobile app to encourage safety, socializing, and sightseeing on the road================
+# PROJECT SKOUT!
 
-### Harman Anand
+A mobile app to encourage safety, socializing, and sightseeing on the road, with the end goal of promoting motorcycle activity.
+
+================
+
 ### Jeroen Goossens
+(Penguinologist)
 ### Zach Perry
-### $cotty $haw
+(ZachPurdue)
+### Scotty Shaw
+(thefreshduke)
 ### Matt Tracy
+(mtracy01)
+================
 
-================**A) ROAD SAFETY**
+**A) ROAD SAFETY**
    - Lock mobile devices traveling above a speed threshold
    - Enable urgent notifications on *PEBBLE WATCH*
    - Inform insurance policy holders of road violations through *TWILIO* and *SENDGRID*
