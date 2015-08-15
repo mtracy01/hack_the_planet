@@ -5,7 +5,7 @@
 ### Harman Anand
 ### Jeroen Goossens
 ### Zach Perry
-### $cotty ($ugaDaddy) $haw
+### $cotty $haw
 ### Matt Tracy
 
 ================**A) ROAD SAFETY**
@@ -17,7 +17,7 @@
 
 **B) ROAD SCOUT**
    - Display *GOOGLE MAP* on mobile lock screen with *CYANOGEN*
-   - Overlay weather and road conditions on *GOOGLE MAP*
+   - Show weather icons and road conditions on *GOOGLE MAP*
    - Indicate nearby tourist hotspots on *GOOGLE MAP*
    - Signal upcoming road conditions with vibrating *PEBBLE WATCH* alerts
    - Display locations and statuses of other users
@@ -29,7 +29,3 @@ WEATHER APIS
 http://openweathermap.org/api
 
 http://apidev.accuweather.com/developers/
-
-
-current status:
-unknown.... (team mates are passed out...)
