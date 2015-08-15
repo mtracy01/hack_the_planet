@@ -1,4 +1,4 @@
-package htp.skout;
+package htp.skout.GUI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import com.parse.ParseUser;
 
 import htp.skout.Objects.Global;
 import htp.skout.Objects.User;
+import htp.skout.R;
 
 public class Login extends AppCompatActivity {
 

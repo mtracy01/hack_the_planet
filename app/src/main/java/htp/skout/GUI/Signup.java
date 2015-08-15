@@ -1,4 +1,4 @@
-package htp.skout;
+package htp.skout.GUI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+
+import htp.skout.R;
 
 public class Signup extends AppCompatActivity {
 

@@ -20,11 +20,11 @@
             android:value="AIzaSyDp1y2XcoUxxe9__p_gFQuvta2dwowFwzA" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".GUI.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".LoadingScreen"
+            android:name=".GUI.LoadingScreen"
             android:label="Skout!" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,11 +33,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Login"
+            android:name=".GUI.Login"
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name=".Signup"
+            android:name=".GUI.Signup"
             android:label="@string/title_activity_signup" >
         </activity>
         <activity
