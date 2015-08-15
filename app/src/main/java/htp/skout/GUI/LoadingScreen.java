@@ -7,7 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import htp.skout.Objects.Global;
 import htp.skout.Objects.User;
@@ -36,9 +39,18 @@ public class LoadingScreen extends AppCompatActivity {
         } else {
             //user is logged in, going to main menu
             Global.user  = new User(ParseUser.getCurrentUser().getUsername());
-            Intent intent = new Intent(LoadingScreen.this, MainActivity.class);
-            startActivity(intent);
-            finish();
+
+            ParseGeoPoint point = new ParseGeoPoint(Global.user.getLocation().latitude, Global.user.getLocation().longitude);
+            ParseUser.getCurrentUser().put("location", point);
+            ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
+                @Override
+                public void done(ParseException e) {
+                    Intent intent = new Intent(LoadingScreen.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+
         }
 
     }

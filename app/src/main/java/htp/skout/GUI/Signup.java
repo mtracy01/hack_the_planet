@@ -1,4 +1,4 @@
-package htp.skout.GUI;
+package htp.skout;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,10 +12,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-import htp.skout.R;
+import htp.skout.Objects.Global;
 
 public class Signup extends AppCompatActivity {
 
@@ -39,38 +40,39 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(pw1.getText().toString().equals(pw2.getText().toString())){
+                if (pw1.getText().toString().equals(pw2.getText().toString())) {
 
-                ParseUser user = new ParseUser();
-                user.setUsername(username.getText().toString());
-                user.setPassword(pw1.getText().toString());
+                    ParseUser user = new ParseUser();
+                    user.setUsername(username.getText().toString());
+                    user.setPassword(pw1.getText().toString());
 
-
-
-
-                user.signUpInBackground(new SignUpCallback() {
-                    public void done(ParseException e) {
-                        if (e == null) {
-                            // Hooray! Let them use the app now.
-
-                            Intent intent = new Intent(Signup.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
+                    ParseGeoPoint point = new ParseGeoPoint(Global.user.getLocation().latitude, Global.user.getLocation().longitude);
+                    user.put("location", point);
 
 
-                        } else {
-                            // Sign up didn't succeed. Look at the ParseException
-                            // to figure out what went wrong
-                            Context context = getApplicationContext();
-                            CharSequence text = "Username already taken! Sorry!";
-                            int duration = Toast.LENGTH_SHORT;
+                    user.signUpInBackground(new SignUpCallback() {
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                // Hooray! Let them use the app now.
 
-                            Toast toast = Toast.makeText(context, text, duration);
-                            toast.show();
+                                Intent intent = new Intent(Signup.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+
+
+                            } else {
+                                // Sign up didn't succeed. Look at the ParseException
+                                // to figure out what went wrong
+                                Context context = getApplicationContext();
+                                CharSequence text = "Username already taken! Sorry!";
+                                int duration = Toast.LENGTH_SHORT;
+
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
+                            }
                         }
-                    }
-                });}
-                else{
+                    });
+                } else {
                     Context context = getApplicationContext();
                     CharSequence text = "Messed up the passwords!!!";
                     int duration = Toast.LENGTH_SHORT;
