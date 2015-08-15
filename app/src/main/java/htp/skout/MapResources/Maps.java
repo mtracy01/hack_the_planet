@@ -13,7 +13,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import htp.skout.Objects.Global;
@@ -119,6 +118,7 @@ public class Maps {
                     .position(sydney));
         }
         Global.map = map;
+        Global.map.moveCamera(CameraUpdateFactory.newLatLngZoom(Global.user.getLocation(),15));
         // Add a listener for map clicks, used to add beacons
         /*Data.map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             public void onMapClick(LatLng point) {

@@ -24,7 +24,7 @@ public class User {
 
     public LatLng getLocation(){ return location; }
 
-    public void setLocation(LatLng coordinates) { location = coordinates; }
+    public void setLocation(LatLng coordinates) { this.location = coordinates; }
 
     public void setMarker(Marker m){ this.marker = m; }
 

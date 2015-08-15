@@ -1,18 +1,22 @@
 package htp.skout.MapResources.MapRunner;
 
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.ext.SatelliteMenu;
+import android.view.ext.SatelliteMenuItem;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import htp.skout.MapResources.LatLngInterpolator;
 import htp.skout.MapResources.Maps;
@@ -29,12 +33,28 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
         Global.mapActivity=this;
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        SupportMapFragment mMapFragment = (SupportMapFragment)
+                getSupportFragmentManager().findFragmentById(R.id.map);
+
+        if (mMapFragment == null) {
+            mMapFragment = SupportMapFragment.newInstance();
+            getSupportFragmentManager().beginTransaction().replace(R.id.map, mMapFragment).commit();
+        }
+        map = new SyncedMapFragment();
+        setContentView(R.layout.activity_map);
+
         Maps.setCenterPosition(Global.user);
         //set up satellite menu
         //TODO:  Set up our satellite menu here... there are some package problems I'll deal with in a bit...
+        SatelliteMenu satelliteMenu = new SatelliteMenu(this);
 
+        List<SatelliteMenuItem> items = new ArrayList<>();
+        items.add(new SatelliteMenuItem(0, R.drawable.ic_map));
+        items.add(new SatelliteMenuItem(1, R.drawable.ic_bike));
+        satelliteMenu.addItems(items);
 
 
         ///
@@ -50,7 +70,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             protected Object doInBackground(Object[] objects) {
                 while (true) {
                     try {
-                        Thread.sleep(3000);
+                        Thread.sleep(1500);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -78,13 +98,13 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         mainHandler.post(new Runnable() {
             @Override
             public void run() {
-                if(Global.map==null) {
-                    Log.e(LOG_TAG,"GLobal map not set!!!");
+                if (Global.map == null) {
+                    Log.e(LOG_TAG, "GLobal map not set!!!");
                     return;
                 }
                 LatLngInterpolator interpolator = new LatLngInterpolator.Linear();
                 User u = Global.user;
-                Log.e(LOG_TAG, "User: " + u.getUserName() + "Animating to: " + u.getLocation().toString());
+                Log.e(LOG_TAG, "User: " + u.getUserName() + "Animating to: " + Global.user.getLocation().toString());
                 Global.mapFragment.animateMarkerToGB(Global.user.getMarker(), Global.user.getLocation(), interpolator, 1500);
 
                 Global.map.animateCamera(CameraUpdateFactory.newLatLng(Global.user.getLocation()), 1500, new GoogleMap.CancelableCallback() {
@@ -102,4 +122,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             }
         });
     }
+
+
 }

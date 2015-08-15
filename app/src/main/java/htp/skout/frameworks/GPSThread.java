@@ -33,6 +33,10 @@ public class GPSThread {
                 // Called when a new location is found by the network location provider.
                 Log.v("locs", Double.toString(location.getLatitude()));
                 //client.sendMessage("location " + location.getLatitude() + " " + location.getLongitude());
+                if(Global.user==null){
+                    Log.e(LOG_TAG, "NULL USER");
+                }
+                Global.user.setLocation(new LatLng(location.getLatitude(), location.getLongitude()));
             }
 
             @Override
