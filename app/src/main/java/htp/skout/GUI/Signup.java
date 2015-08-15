@@ -20,6 +20,9 @@ import htp.skout.R;
 
 import htp.skout.Objects.Global;
 
+/**
+ * Created by Jeroen Goossens for Hack The Planet 2015
+ */
 
 public class Signup extends AppCompatActivity {
 

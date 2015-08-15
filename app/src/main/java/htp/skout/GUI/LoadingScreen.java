@@ -16,6 +16,12 @@ import htp.skout.Objects.Global;
 import htp.skout.Objects.User;
 import htp.skout.R;
 
+
+/**
+ * Created by Jeroen Goossens for Hack The Planet 2015
+ */
+
+
 public class LoadingScreen extends AppCompatActivity {
 
     @Override
