@@ -5,6 +5,8 @@ import android.content.Context;
 
 import com.google.android.gms.maps.GoogleMap;
 
+import java.util.ArrayList;
+
 import htp.skout.MapResources.SyncedMapFragment;
 import htp.skout.frameworks.GPSThread;
 
@@ -18,4 +20,6 @@ public class Global {
     public static GoogleMap map;
     public static SyncedMapFragment mapFragment;
     public static Activity mapActivity = null;
+
+    public static ArrayList<User> users = new ArrayList<>();
 }
