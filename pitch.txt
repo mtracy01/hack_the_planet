@@ -1,0 +1,13 @@
+Original HTP BMW Pitch
+
+SafeDrive
+
+Think of this like a fitbit for driving.  Why do people use fitbit?  It is because people like to compare their health progress with their friends.  The addition of social components to applications naturally makes them more popular since it encourages collaborative progress.  Applying this idea towards the automotive industry, SafeDrive would create a system of judging a person’s driving ability based on speed, topological (map) data, and how their driving responds to weather and traffic conditions.  By scoring their driving ability, people can prove themselves to be either more or less safe drivers, while also giving younger drivers a way to prove their driving skill to their parents.  This would give parents a better way to confidently assess whether that child has sufficient driving capabilities to be entrusted with their own motorcycles, and what kind of vehicle the app might recommend the child be given the privilege to use.
+
+TL;DR
+Inserting social competitiveness to driving safely. Speed is for the track, and always comes after safety.
+
+
+Don’t drive faster, drive safer.
+
+Matt Tracy, Zach Perry
