@@ -2,11 +2,11 @@
 
 PROJECT SKOUT!A mobile app to encourage safety, socializing, and sightseeing on the road================
 
-Harman Anand
-Jeroen Goossens
-Zach Perry
-Scotty Shaw
-Matt Tracy
+# Harman Anand
+# Jeroen Goossens
+# Zach Perry
+# $cotty $haw
+# Matt Tracy
 
 ================A) ROAD SAFETY
    - Lock mobile devices traveling above a speed threshold
