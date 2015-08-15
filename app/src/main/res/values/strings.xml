@@ -6,4 +6,5 @@
     <string name="title_activity_loading_screen">LoadingScreen</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_signup">Signup</string>
+    <string name="title_activity_score_screen">ScoreScreen</string>
 </resources>

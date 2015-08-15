@@ -1,36 +1,22 @@
 package htp.skout;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 
-import htp.skout.MapResources.MapRunner.MapActivity;
-import htp.skout.Objects.Global;
-import htp.skout.frameworks.GPSThread;
+public class ScoreScreen extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-
-    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Global.context = this;
-        if(Global.gpsThread==null)
-            Global.gpsThread = new GPSThread();
-
-        startActivity(new Intent(MainActivity.this, MapActivity.class));
-        //button = (Button) findViewById(R.id.button);
-
+        setContentView(R.layout.activity_score_screen);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_score_screen, menu);
         return true;
     }
 
