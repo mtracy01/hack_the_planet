@@ -11,11 +11,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ext.SatelliteMenu;
+import android.view.ext.SatelliteMenuItem;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import htp.skout.MapResources.LatLngInterpolator;
 import htp.skout.MapResources.Maps;
@@ -48,7 +53,12 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         Maps.setCenterPosition(Global.user);
         //set up satellite menu
         //TODO:  Set up our satellite menu here... there are some package problems I'll deal with in a bit...
+        SatelliteMenu satelliteMenu = new SatelliteMenu(this);
 
+        List<SatelliteMenuItem> items = new ArrayList<>();
+        items.add(new SatelliteMenuItem(0, R.drawable.ic_map));
+        items.add(new SatelliteMenuItem(1, R.drawable.ic_bike));
+        satelliteMenu.addItems(items);
 
 
         ///
