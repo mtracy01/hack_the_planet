@@ -52,7 +52,7 @@ public class ScoreScreen extends ListActivity {
     //Ride Breakdown-------------------------------------------------------------------------------
 
     public float getDistance() { //return distance of trip in miles (mi)
-        return 89.41; //placeholder
+        return 89.41f; //placeholder
     }
 
     public int getDuration() { //return the duration of the ride in minutes (m), rounded down
@@ -61,11 +61,11 @@ public class ScoreScreen extends ListActivity {
     }
 
     public float getAvgSpeed() { //return average speed of the trip in miles per hour (mph)
-        return 35.64 //placeholder
+        return 35.64f; //placeholder
     }
 
     public float getTopSpeed() { //return top speed of trip in miles per hour (mph)
-        return 72.43; //placeholder
+        return 72.43f; //placeholder
     }
 
     //Violations Breakdown-------------------------------------------------------------------------
@@ -82,7 +82,7 @@ public class ScoreScreen extends ListActivity {
     }
 
     public float getAverageViolation() { //return average speed above speed limit per violation
-        return 3.64; //placeholder
+        return 3.64f; //placeholder
     }
 
     //Score----------------------------------------------------------------------------------------
