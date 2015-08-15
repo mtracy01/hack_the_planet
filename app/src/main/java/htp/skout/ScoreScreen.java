@@ -1,8 +1,9 @@
 package htp.skout;
 
-//Zach Perry - hack the planet
+//Created by Zach Perry, 8/15/15 - hack the planet 2015
 //ZachPurdue github
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,13 +11,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-public class ScoreScreen extends AppCompatActivity {
+public class ScoreScreen extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_screen);
     }
+
+//    string[] items;
+//    protected override void OnCreate(Bundle bundle)
+//    {
+//        base.OnCreate(bundle);
+//        items = new string[] { "Vegetables","Fruits","Flower Buds","Legumes","Bulbs","Tubers" };
+//        ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, items);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
