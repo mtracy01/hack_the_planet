@@ -1,0 +1,26 @@
+HTP BMW Scoring Algorithm
+By: Zach Perry
+
+Scoring for parental/educational
+Start with base score: X
+Goal is to lower score (lower = better)
+Anytime an unsafe action is performed, X + Y
+where Y is:
+	speeding
+	traffic violations
+	other unsafe driving actions (TBD)
+	Update: X = X + Y
+
+Anytime a safe ride is completed, points removed based on X - Z
+where Z is:
+	the length of the ride (distance in miles)
+	considerations to be added for:
+		time of day
+		traffic conditions
+		length of ride (time)
+
+Scoring for social aspects
+
+Potential Badge System
+
+Potential Driver Rating System
