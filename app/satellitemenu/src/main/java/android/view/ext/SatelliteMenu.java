@@ -258,7 +258,9 @@ public class SatelliteMenu extends FrameLayout {
 		setMeasuredDimension(totalWidth, totalHeight);
 	}
 
-	private static class SatelliteItemClickAnimationListener implements Animation.AnimationListener {
+
+
+    private static class SatelliteItemClickAnimationListener implements Animation.AnimationListener {
 		private WeakReference<SatelliteMenu> menuRef;
 		private int tag;
 		
