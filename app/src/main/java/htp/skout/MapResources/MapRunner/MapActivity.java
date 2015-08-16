@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -34,6 +35,7 @@ import htp.skout.MapResources.LatLngInterpolator;
 import htp.skout.MapResources.Maps;
 import htp.skout.MapResources.SyncedMapFragment;
 import htp.skout.Objects.Global;
+import htp.skout.Objects.SpeedLimitService;
 import htp.skout.Objects.User;
 import htp.skout.R;
 import htp.skout.frameworks.BackgroundTasks;
@@ -48,6 +50,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Global.mapActivity=this;
 
         //BackgroundTasks.geopoint.execute();
@@ -122,6 +125,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 LatLngInterpolator interpolator = new LatLngInterpolator.Linear();
                 User u = Global.user;
                 Log.e(LOG_TAG, "User: " + u.getUserName() + "Animating to: " + Global.user.getLocation().toString());
+
+                int maxSpeed = 40;
+
                 Global.mapFragment.animateMarkerToGB(Global.user.getMarker(), Global.user.getLocation(), interpolator, 1500);
 
                 Global.map.animateCamera(CameraUpdateFactory.newLatLng(Global.user.getLocation()), 1500, new GoogleMap.CancelableCallback() {

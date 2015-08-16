@@ -11,14 +11,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class SpeedLimitService extends Service {
+public class SpeedLimitService extends Service{
 
     public static String speedLimitUrl = "http://www.overpass-api.de/api/xapi?*[maxspeed=*][bbox=5.6283473,50.5348043,5.6285261,50.534884]";
+    public static String speedLimit = "";
 
     public void getSpeedLimit() throws IOException {
 
 
-        //Runnable runnable = new Runnable() throws IOException{
+        Runnable runnable = new Runnable(){
 
 
            // public void run() {
@@ -32,7 +33,7 @@ public class SpeedLimitService extends Service {
                 while ((inputLine = in.readLine()) != null){
                     if (inputLine.contains("maxspeed")){
                         int length = inputLine.length();
-                        String speedLimit = "";
+
                         for (int i = 0; i < length; i++) {
                             Character character = inputLine.charAt(i);
                             if (Character.isDigit(character)) {
@@ -43,13 +44,14 @@ public class SpeedLimitService extends Service {
                     }
                 }
                 in.close();
-           //}
+           };
 
 
 
 
-        //};
-        //Thread thread = new Thread(runnable);
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
     }
 
     @Override

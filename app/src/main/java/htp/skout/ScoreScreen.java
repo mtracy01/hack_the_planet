@@ -69,12 +69,12 @@ public class ScoreScreen extends ListActivity {
         return 89.41f; //placeholder
     }
 
-    public int getDuration() { //return the duration of the ride in minutes (m), rounded down
+    public float getDuration() { //return the duration of the ride in minutes (m), rounded down
         //distance / inverse of average speed * 60 == duration
 
-        int n = getDistance()/(1/getAvgSpeed());
+      float duration = getDistance()/(1/getAvgSpeed());
 
-        return n; //placeholder
+        return duration; //placeholder
     }
 
     public float getAvgSpeed() { //return average speed of the trip in miles per hour (mph)
