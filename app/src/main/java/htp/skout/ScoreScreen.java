@@ -85,6 +85,9 @@ public class ScoreScreen extends ListActivity {
         return 3.64f; //placeholder
     }
 
+    public float getHighestViolation() { //return highest speed above speed limit
+        return 12.43f; //placeholder
+    }
     //Score----------------------------------------------------------------------------------------
     /*
     Uses the scoring algorithm to assign the rider a score based on distance, speed, and

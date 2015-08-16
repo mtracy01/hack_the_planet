@@ -1,0 +1,5 @@
+(Distance*100)
+divided by
+(avg speed/avg limit)
+minus
+(((time over * average amount over)/highest amount over)*weather multiplier)
