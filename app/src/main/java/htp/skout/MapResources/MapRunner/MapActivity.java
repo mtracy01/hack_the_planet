@@ -21,6 +21,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +50,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
         Global.mapActivity=this;
 
-        BackgroundTasks.geopoint.execute();
+        //BackgroundTasks.geopoint.execute();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         SupportMapFragment mMapFragment = (SupportMapFragment)
@@ -132,6 +136,14 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                     }
                 });
 
+                ParseGeoPoint point = new ParseGeoPoint(Global.user.getLocation().latitude, Global.user.getLocation().longitude);
+                ParseUser.getCurrentUser().put("location", point);
+                ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+
+                    }
+                });
 
                 //TODO: Add code for animating global list of users here, removing them if they are outside of the radius
 
