@@ -31,7 +31,15 @@ public class SpeedLimitService extends Service {
 
                 while ((inputLine = in.readLine()) != null){
                     if (inputLine.contains("maxspeed")){
-                        
+                        int length = inputLine.length();
+                        String speedLimit = "";
+                        for (int i = 0; i < length; i++) {
+                            Character character = inputLine.charAt(i);
+                            if (Character.isDigit(character)) {
+                                speedLimit += character;
+                            }
+                        }
+                        System.out.println("result is: " + speedLimit);
                     }
                 }
                 in.close();
