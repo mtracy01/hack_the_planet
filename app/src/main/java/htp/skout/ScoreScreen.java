@@ -10,22 +10,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ScoreScreen extends ListActivity {
+
+    TextView score, duration, average_speed, top_speed, times_over_limit, average_over, highest_over;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_screen);
+
+        score = (TextView) findViewById(R.id.score1);
+        duration = (TextView) findViewById(R.id.score2);
+        average_speed = (TextView) findViewById(R.id.score3);
+        top_speed = (TextView) findViewById(R.id.score4);
+        times_over_limit = (TextView) findViewById(R.id.score5);
+        average_over = (TextView) findViewById(R.id.score6);
+        highest_over = (TextView) findViewById(R.id.score7);
+
+
     }
 
-//    string[] items;
-//    protected override void OnCreate(Bundle bundle)
-//    {
-//        base.OnCreate(bundle);
-//        items = new string[] { "Vegetables","Fruits","Flower Buds","Legumes","Bulbs","Tubers" };
-//        ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, items);
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -52,6 +58,7 @@ public class ScoreScreen extends ListActivity {
     //Ride Breakdown-------------------------------------------------------------------------------
 
     public float getDistance() { //return distance of trip in miles (mi)
+
         return 89.41f; //placeholder
     }
 
@@ -62,9 +69,11 @@ public class ScoreScreen extends ListActivity {
 
     public float getAvgSpeed() { //return average speed of the trip in miles per hour (mph)
         return 35.64f; //placeholder
+
     }
 
     public float getTopSpeed() { //return top speed of trip in miles per hour (mph)
+
         return 72.43f; //placeholder
     }
 
@@ -75,19 +84,20 @@ public class ScoreScreen extends ListActivity {
         if (n == 0) {
             return 0;
             //if no violations, show some other congratulationary message
-        }
-        else {
+        } else {
             return n; //placeholder
         }
     }
 
     public float getAverageViolation() { //return average speed above speed limit per violation
+
         return 3.64f; //placeholder
     }
 
     public float getHighestViolation() { //return highest speed above speed limit
         return 12.43f; //placeholder
     }
+
     //Score----------------------------------------------------------------------------------------
     /*
     Uses the scoring algorithm to assign the rider a score based on distance, speed, and
@@ -98,6 +108,7 @@ public class ScoreScreen extends ListActivity {
     is as accurate as possible.
      */
     public int rideScore() { //method yet to be decided
+
         return 1124; //placeholder
     }
 

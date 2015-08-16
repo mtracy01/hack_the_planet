@@ -14,31 +14,32 @@
         android:padding="5dp"
         />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/score1"
         android:layout_gravity="center_horizontal"
-        android:text="Ride Score:" />
+        android:text="Ride Score:"
+        android:editable="false" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/score2"
         android:layout_gravity="center_horizontal"
         android:text="Duration of Ride:" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/score3"
         android:layout_gravity="center_horizontal"
         android:text="Average Speed:" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/score4"
         android:layout_gravity="center_horizontal"
         android:text="Top Speed:" />
 
@@ -51,24 +52,24 @@
         android:padding="5dp"
         />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/score5"
         android:layout_gravity="center_horizontal"
         android:text="Times Over Limit:" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/score6"
         android:layout_gravity="center_horizontal"
         android:text="Average Speed Over:" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/score7"
         android:layout_gravity="center_horizontal"
         android:text="Highest Speed Over:" />
 
