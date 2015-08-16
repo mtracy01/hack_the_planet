@@ -2,22 +2,75 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:weightSum="1">
 
     <TextView android:id="@+id/Heading"
-        android:text="End of Ride Data"
+        android:text="Ride Overview"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#00000000"
         android:textSize="30dp"
-        android:textColor="#FF267F00"
         android:textStyle="bold"
         android:padding="5dp"
         />
 
-    <ListView android:id="@+id/List"
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"
+        android:text="Ride Score:" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"
+        android:text="Duration of Ride:" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"
+        android:text="Average Speed:" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"
+        android:text="Top Speed:" />
+
+    <TextView android:id="@+id/Heading"
+        android:text="Violations"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:cacheColorHint="#FFDAFF7F"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:padding="5dp"
         />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"
+        android:text="Times Over Limit:" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"
+        android:text="Average Speed Over:" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"
+        android:text="Highest Speed Over:" />
+
+
 </LinearLayout>

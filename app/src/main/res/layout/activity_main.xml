@@ -1,66 +1,27 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_vertical_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
 
-    <TextView
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true">
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Ride Report"
-            android:textSize="65"
-            android:fontFamily=""
-            android:id="@+id/textView"
-            android:layout_gravity="center_horizontal" />
+            android:layout_height="match_parent"
+            layout_width="wrap_content"
+            layout_height="match_parent"></LinearLayout>
 
-        <EditText
-            android:layout_width="394dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_gravity="center_horizontal"
-            android:text="Rider Score:" />
-
-        <EditText
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.11"
-            android:text="Duration of Ride:" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.11"
-            android:text="Top Speed:" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.11"
-            android:text="Average Speed:" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.11"
-            android:text="Distance Traveled:" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Violations"
-            android:id="@+id/buttonViolation"
-            android:clickable="true" />
+            android:layout_height="match_parent"
+            layout_width="wrap_content"
+            layout_height="match_parent"></LinearLayout>
+    </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>
