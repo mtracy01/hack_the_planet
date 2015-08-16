@@ -7,9 +7,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import java.util.Calendar;
+
 import htp.skout.MapResources.MapRunner.MapActivity;
 import htp.skout.Objects.Global;
 import htp.skout.R;
+import htp.skout.Tuple;
 import htp.skout.frameworks.GPSThread;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, MapActivity.class));
         //button = (Button) findViewById(R.id.button);
 
+        //time
+        Calendar cal = Calendar.getInstance();
+        Global.startTime = new Tuple<>(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
     }
 
     @Override

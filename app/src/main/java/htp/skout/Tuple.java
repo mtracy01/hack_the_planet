@@ -12,11 +12,11 @@ public class Tuple<X, Y> {
         this.y = y;
     }
 
-    public X getDesc() {
+    public X getZerothElement() {
         return this.x;
     }
 
-    public Y getHighLow() {
+    public Y getFirstElement() {
         return this.y;
     }
 }

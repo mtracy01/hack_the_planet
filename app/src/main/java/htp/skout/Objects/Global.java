@@ -8,6 +8,7 @@ import com.google.android.gms.maps.GoogleMap;
 import java.util.ArrayList;
 
 import htp.skout.MapResources.SyncedMapFragment;
+import htp.skout.Tuple;
 import htp.skout.frameworks.GPSThread;
 
 /**
@@ -20,6 +21,15 @@ public class Global {
     public static GoogleMap map;
     public static SyncedMapFragment mapFragment;
     public static Activity mapActivity = null;
+
+    //scoring
+
+    public static double weatherPenaltyMultiplier;
+    public static double weatherRewardMultiplier;
+    public static double timePenaltyMultiplier;
+    public static double timeRewardMultiplier;
+    public static double lengthPenaltyMultiplier;
+    public static Tuple<Integer, Integer> startTime;
 
     public static ArrayList<User> users = new ArrayList<>();
 }

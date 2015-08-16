@@ -18,6 +18,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -142,8 +144,6 @@ public class BackgroundTasks {
                     e.printStackTrace();
                 }
 
-                //get the weather
-
                 Tuple<String, Double[]> weatherConditions = Weather.getWeatherInformation(Global.user.getLocation());
 
                 //update the icon if needed
@@ -152,8 +152,6 @@ public class BackgroundTasks {
 
                 //push alerts if needed; Pebble
 
-                double rewardMultiplier = 1;
-                double penaltyMultiplier = 1;
                 String weatherDesc = null;
 
                 List<String> dangerousWeather = new ArrayList<String>();
@@ -176,16 +174,58 @@ public class BackgroundTasks {
 
                 if (weatherConditions != null) {
                     for (String s : dangerousWeather) {
-                        String desc = weatherConditions.getDesc();
+                        String desc = weatherConditions.getZerothElement();
                         if (desc.contains(s)) {
-                            penaltyMultiplier = 5;
-                            rewardMultiplier = 0.1;
+                            Global.weatherPenaltyMultiplier = 5;
+                            Global.weatherRewardMultiplier = 0.1;
                         }
                         else if (desc.contains("rain") || desc.contains("drizzle")) {
-                            penaltyMultiplier = 2;
-                            rewardMultiplier = 2;
+                            Global.weatherPenaltyMultiplier = 2;
+                            Global.weatherRewardMultiplier = 2;
                         }
                     }
+                }
+            }
+        }
+    };
+
+    public static AsyncTask<Void, Void, Void> time = new AsyncTask<Void, Void, Void>() {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            while (true) {
+                try {
+                    Thread.sleep(5 * 60 * 1000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                Calendar cal = Calendar.getInstance();
+
+                int startHour = Global.startTime.getZerothElement();
+                int startMin = Global.startTime.getFirstElement();
+
+                int hour = cal.get(Calendar.HOUR_OF_DAY);
+                int min = cal.get(Calendar.MINUTE);
+
+                Tuple<Integer, Integer> drivingTime = new Tuple<>(startHour - hour, startMin - min);
+
+                if (hour <= 7 && hour >= 21) {
+                    Global.timePenaltyMultiplier = 2;
+                    Global.timeRewardMultiplier = 2;
+                }
+                else {
+                    Global.timePenaltyMultiplier = 1;
+                    Global.timeRewardMultiplier = 1;
+                }
+
+                if (drivingTime.getZerothElement() > 2) {
+                    Global.lengthPenaltyMultiplier = 2;
+                }
+                else if (drivingTime.getZerothElement() > 4) {
+                    Global.lengthPenaltyMultiplier = 3;
+                }
+                else if (drivingTime.getZerothElement() > 5) {
+                    Global.lengthPenaltyMultiplier = 5;
                 }
             }
         }
