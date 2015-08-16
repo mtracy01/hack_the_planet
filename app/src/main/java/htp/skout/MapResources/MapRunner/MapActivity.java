@@ -1,5 +1,6 @@
 package htp.skout.MapResources.MapRunner;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -38,6 +39,7 @@ import htp.skout.Objects.Global;
 import htp.skout.Objects.SpeedLimitService;
 import htp.skout.Objects.User;
 import htp.skout.R;
+import htp.skout.ScoreScreen;
 import htp.skout.frameworks.BackgroundTasks;
 
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -76,7 +78,13 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         items.add(new SatelliteMenuItem(1, R.drawable.ic_bike));
         satelliteMenu.addItems(items);
 
-
+        satelliteMenu.setOnItemClickedListener(new SatelliteMenu.SateliteClickedListener() {
+            @Override
+            public void eventOccured(int id) {
+                if(id==1)
+                    startActivity(new Intent(MapActivity.this, ScoreScreen.class));
+            }
+        });
         ///
         if(savedInstanceState==null){
             map = new SyncedMapFragment();

@@ -18,6 +18,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import htp.skout.MapResources.MapRunner.MapActivity;
+
 public class ScoreScreen extends ListActivity {
 
     TextView score, duration, average_speed, top_speed, times_over_limit, average_over, highest_over;
@@ -50,6 +52,13 @@ public class ScoreScreen extends ListActivity {
         items.add(new SatelliteMenuItem(1, R.drawable.ic_bike));
         satelliteMenu.addItems(items);
 
+        satelliteMenu.setOnItemClickedListener(new SatelliteMenu.SateliteClickedListener() {
+            @Override
+            public void eventOccured(int id) {
+                if(id==0)
+                    startActivity(new Intent(ScoreScreen.this,MapActivity.class));
+            }
+        });
         /*satelliteMenu.setOnItemClickedListener(new O) {
             @Override
             public void onClick(View v) {
