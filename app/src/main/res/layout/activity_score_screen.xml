@@ -80,5 +80,18 @@
         android:layout_gravity="center_horizontal"
         android:text="Highest Speed Over:" />
 
+    <android.view.ext.SatelliteMenu
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        sat:satelliteDistance="170dp"
+        sat:mainImage="@drawable/ic_launcher"
+        sat:totalSpacingDegree="90"
+        sat:closeOnClick="true"
+        sat:expandDuration="500"/>
+
 
 </LinearLayout>

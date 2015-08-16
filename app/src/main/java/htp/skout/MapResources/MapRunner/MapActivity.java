@@ -127,6 +127,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 Log.e(LOG_TAG, "User: " + u.getUserName() + "Animating to: " + Global.user.getLocation().toString());
 
                 int maxSpeed = 40;
+               
 
                 Global.mapFragment.animateMarkerToGB(Global.user.getMarker(), Global.user.getLocation(), interpolator, 1500);
 

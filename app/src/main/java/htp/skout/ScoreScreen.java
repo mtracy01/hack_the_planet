@@ -9,8 +9,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ext.SatelliteMenu;
+import android.view.ext.SatelliteMenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ScoreScreen extends ListActivity {
 
@@ -37,6 +43,19 @@ public class ScoreScreen extends ListActivity {
         average_over.setText("Average Speed Over: " + getAverageViolation());
         highest_over.setText("Highest Speed Over: " + getHighestViolation());
 
+        SatelliteMenu satelliteMenu = new SatelliteMenu(this);
+
+        List<SatelliteMenuItem> items = new ArrayList<>();
+        items.add(new SatelliteMenuItem(0, R.drawable.ic_map));
+        items.add(new SatelliteMenuItem(1, R.drawable.ic_bike));
+        satelliteMenu.addItems(items);
+
+        /*satelliteMenu.setOnItemClickedListener(new O) {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }); */
     }
 
 
