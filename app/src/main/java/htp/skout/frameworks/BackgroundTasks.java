@@ -135,6 +135,22 @@ public class BackgroundTasks {
         }
     };
 
+    public static AsyncTask<Void, Void, Void> weather = new AsyncTask<Void, Void, Void>() {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            while (true) {
+                try {
+                    Thread.sleep(6000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }
+    };
+
+
 
 
 }
