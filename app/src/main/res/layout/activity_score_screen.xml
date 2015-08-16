@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|left"
         android:layout_margin="8dp"
-        android:layout_weight="1"
+
         sat:satelliteDistance="170dp"
         sat:mainImage="@drawable/ic_launcher"
         sat:totalSpacingDegree="90"
