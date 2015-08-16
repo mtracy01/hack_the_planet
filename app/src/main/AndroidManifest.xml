@@ -45,6 +45,12 @@
             android:name=".ScoreScreen"
             android:label="@string/title_activity_score_screen" >
         </activity>
+
+        <service
+            android:name=".Objects.SpeedLimitService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>
