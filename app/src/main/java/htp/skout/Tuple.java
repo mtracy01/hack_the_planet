@@ -11,4 +11,12 @@ public class Tuple<X, Y> {
         this.x = x;
         this.y = y;
     }
+
+    public X getDesc() {
+        return this.x;
+    }
+
+    public Y getHighLow() {
+        return this.y;
+    }
 }

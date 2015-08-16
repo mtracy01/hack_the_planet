@@ -22,6 +22,8 @@ import java.util.HashMap;
 import htp.skout.GUI.MainActivity;
 import htp.skout.Objects.Global;
 import htp.skout.Objects.User;
+import htp.skout.Tuple;
+import htp.skout.Weather;
 
 /**
  * Created by Matthew on 8/15/2015.
@@ -138,15 +140,28 @@ public class BackgroundTasks {
     public static AsyncTask<Void, Void, Void> weather = new AsyncTask<Void, Void, Void>() {
         @Override
         protected Void doInBackground(Void... voids) {
-            while (true) {
-                try {
-                    Thread.sleep(6000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-
+        while (true) {
+            try {
+                Thread.sleep(5 * 60000);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
+            //get the weather
+
+            Tuple<String, Double[]> weatherConditions = Weather.getWeatherInformation(Global.user.getLocation());
+
+            //update the icon if needed
+
+//                TODO: icon = Tuple[0]
+
+
+
+            //push alerts if needed; Pebble
+
+
+
+        }
         }
     };
 

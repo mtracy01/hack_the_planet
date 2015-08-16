@@ -17,7 +17,7 @@ import java.net.URI;
  */
 public class Weather {
 
-    public static Tuple<String, Double[]> getWeather (LatLng xy) {
+    public static Tuple<String, Double[]> getWeatherInformation (LatLng xy) {
 
         HttpClient client = new DefaultHttpClient();//initClient();
         HttpGet request = new HttpGet();
