@@ -85,6 +85,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                     startActivity(new Intent(MapActivity.this, ScoreScreen.class));
             }
         });
+
+
         ///
         if(savedInstanceState==null){
             map = new SyncedMapFragment();
