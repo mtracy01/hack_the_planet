@@ -66,6 +66,9 @@ public class ScoreScreen extends ListActivity {
 
     public int getDuration() { //return the duration of the ride in minutes (m), rounded down
         //distance / inverse of average speed * 60 == duration
+
+        
+
         return 150; //placeholder
     }
 
