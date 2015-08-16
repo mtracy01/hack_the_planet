@@ -19,7 +19,7 @@ public class SpeedLimitService extends Service{
     public void getSpeedLimit() throws IOException {
 
 
-        Runnable runnable = new Runnable(){
+        //Runnable runnable = new Runnable(){
 
 
            // public void run() {
@@ -44,14 +44,14 @@ public class SpeedLimitService extends Service{
                     }
                 }
                 in.close();
-           };
 
 
 
 
-        };
-        Thread thread = new Thread(runnable);
-        thread.start();
+
+        //};
+        //Thread thread = new Thread(runnable);
+        //thread.start();
     }
 
     @Override
