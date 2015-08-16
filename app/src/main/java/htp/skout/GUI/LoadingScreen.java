@@ -46,16 +46,9 @@ public class LoadingScreen extends AppCompatActivity {
             //user is logged in, going to main menu
             Global.user  = new User(ParseUser.getCurrentUser().getUsername());
 
-            ParseGeoPoint point = new ParseGeoPoint(Global.user.getLocation().latitude, Global.user.getLocation().longitude);
-            ParseUser.getCurrentUser().put("location", point);
-            ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
-                @Override
-                public void done(ParseException e) {
                     Intent intent = new Intent(LoadingScreen.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-                }
-            });
 
         }
 

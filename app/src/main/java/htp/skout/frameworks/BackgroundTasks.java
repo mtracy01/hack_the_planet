@@ -1,5 +1,6 @@
 package htp.skout.frameworks;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -8,7 +9,9 @@ import com.parse.FunctionCallback;
 import com.parse.Parse;
 import com.parse.ParseCloud;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +19,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
+import htp.skout.GUI.MainActivity;
 import htp.skout.Objects.Global;
 import htp.skout.Objects.User;
 
@@ -103,4 +107,34 @@ public class BackgroundTasks {
             }
         }
     };
+
+
+    public static AsyncTask<Void, Void, Void> geopoint = new AsyncTask<Void, Void, Void>() {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            while (true) {
+                try {
+                    Thread.sleep(6000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+                ParseGeoPoint point = new ParseGeoPoint(Global.user.getLocation().latitude, Global.user.getLocation().longitude);
+                ParseUser.getCurrentUser().put("location", point);
+                ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+
+                    }
+                });
+
+
+
+            }
+        }
+    };
+
+
+
 }

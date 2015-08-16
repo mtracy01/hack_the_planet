@@ -32,6 +32,7 @@ import htp.skout.MapResources.SyncedMapFragment;
 import htp.skout.Objects.Global;
 import htp.skout.Objects.User;
 import htp.skout.R;
+import htp.skout.frameworks.BackgroundTasks;
 
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -44,6 +45,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Global.mapActivity=this;
+
+        BackgroundTasks.geopoint.execute();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         SupportMapFragment mMapFragment = (SupportMapFragment)
