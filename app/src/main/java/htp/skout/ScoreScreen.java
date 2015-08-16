@@ -30,6 +30,8 @@ public class ScoreScreen extends ListActivity {
         highest_over = (TextView) findViewById(R.id.score7);
 
 
+
+
     }
 
 

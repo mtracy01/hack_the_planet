@@ -2,6 +2,7 @@ package htp.skout.frameworks;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.provider.Settings;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -172,6 +173,9 @@ public class BackgroundTasks {
                 dangerousWeather.add("gale");
                 dangerousWeather.add("storm");
 
+
+                //added a small fix for sunshine lol....
+
                 if (weatherConditions != null) {
                     for (String s : dangerousWeather) {
                         String desc = weatherConditions.getZerothElement();
@@ -182,6 +186,10 @@ public class BackgroundTasks {
                         else if (desc.contains("rain") || desc.contains("drizzle")) {
                             Global.weatherPenaltyMultiplier = 2;
                             Global.weatherRewardMultiplier = 2;
+                        }
+                        else{
+                            Global.weatherPenaltyMultiplier = 1;
+                            Global.weatherRewardMultiplier = 1;
                         }
                     }
                 }
