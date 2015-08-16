@@ -1,16 +1,26 @@
-package htp.skout;
+package htp.skout.GUI;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import htp.skout.Objects.Global;
 import htp.skout.Objects.User;
+import htp.skout.R;
+
+
+/**
+ * Created by Jeroen Goossens for Hack The Planet 2015
+ */
+
 
 public class LoadingScreen extends AppCompatActivity {
 
@@ -35,9 +45,11 @@ public class LoadingScreen extends AppCompatActivity {
         } else {
             //user is logged in, going to main menu
             Global.user  = new User(ParseUser.getCurrentUser().getUsername());
-            Intent intent = new Intent(LoadingScreen.this, MainActivity.class);
-            startActivity(intent);
-            finish();
+
+                    Intent intent = new Intent(LoadingScreen.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
         }
 
     }

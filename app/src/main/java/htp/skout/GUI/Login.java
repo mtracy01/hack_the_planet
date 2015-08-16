@@ -1,9 +1,9 @@
-package htp.skout;
+package htp.skout.GUI;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +17,13 @@ import com.parse.ParseUser;
 
 import htp.skout.Objects.Global;
 import htp.skout.Objects.User;
+import htp.skout.R;
+
+
+/**
+ * Created by Jeroen Goossens for Hack The Planet 2015
+ */
+
 
 public class Login extends AppCompatActivity {
 

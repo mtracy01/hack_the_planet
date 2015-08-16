@@ -1,19 +1,20 @@
-package htp.skout;
+package htp.skout.GUI;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
 import htp.skout.MapResources.MapRunner.MapActivity;
 import htp.skout.Objects.Global;
+import htp.skout.R;
 import htp.skout.frameworks.GPSThread;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
