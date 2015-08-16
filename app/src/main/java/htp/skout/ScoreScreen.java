@@ -29,8 +29,13 @@ public class ScoreScreen extends ListActivity {
         average_over = (TextView) findViewById(R.id.score6);
         highest_over = (TextView) findViewById(R.id.score7);
 
-
-
+        score.setText("Ride Score: " + getScore());
+        duration.setText("Duration of Ride: " + getDuration());
+        average_speed.setText("Average Speed: " + getAvgSpeed());
+        top_speed.setText("Top Speed: " + getTopSpeed());
+        times_over_limit.setText("Times Over Limit: " + getViolations());
+        average_over.setText("Average Speed Over: " + getAverageViolation());
+        highest_over.setText("Highest Speed Over: " + getHighestViolation());
 
     }
 
@@ -67,9 +72,9 @@ public class ScoreScreen extends ListActivity {
     public int getDuration() { //return the duration of the ride in minutes (m), rounded down
         //distance / inverse of average speed * 60 == duration
 
-        
+        int n = getDistance()/(1/getAvgSpeed());
 
-        return 150; //placeholder
+        return n; //placeholder
     }
 
     public float getAvgSpeed() { //return average speed of the trip in miles per hour (mph)
@@ -112,7 +117,7 @@ public class ScoreScreen extends ListActivity {
     In the end, algorithm should take all collected data points into account for a score that
     is as accurate as possible.
      */
-    public int rideScore() { //method yet to be decided
+    public int getScore() { //method yet to be decided
 
         return 1124; //placeholder
     }

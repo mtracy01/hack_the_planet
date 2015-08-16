@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/score1"
+        android:textSize="20dp"
         android:layout_gravity="center_horizontal"
         android:text="Ride Score:"
         android:editable="false" />
@@ -26,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/score2"
+        android:textSize="20dp"
         android:layout_gravity="center_horizontal"
         android:text="Duration of Ride:" />
 
@@ -33,6 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/score3"
+        android:textSize="20dp"
         android:layout_gravity="center_horizontal"
         android:text="Average Speed:" />
 
@@ -40,6 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/score4"
+        android:textSize="20dp"
         android:layout_gravity="center_horizontal"
         android:text="Top Speed:" />
 
@@ -56,6 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/score5"
+        android:textSize="20dp"
         android:layout_gravity="center_horizontal"
         android:text="Times Over Limit:" />
 
@@ -63,6 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/score6"
+        android:textSize="20dp"
         android:layout_gravity="center_horizontal"
         android:text="Average Speed Over:" />
 
@@ -70,6 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/score7"
+        android:textSize="20dp"
         android:layout_gravity="center_horizontal"
         android:text="Highest Speed Over:" />
 
